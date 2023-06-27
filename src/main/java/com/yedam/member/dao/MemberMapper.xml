@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yedam.member.dao.MemberMapper">
+	<select id="memberList">
+		select * from tbl_users
+	</select>
+	
+	
+	<select id="login" resultType="member">
+		select * from tbl_users
+		where user_id = #{id}
+		and 	user_pw = #{pw}
+	</select>
+	<insert id="insert" parameterType="member">
+		insert into tbl_users (user_id, user_pw, user_name, user_birth, user_img)
+		values (#{userId}, #{userPw}, #{userName}, #{userBirth}, #{userImg})
+	</insert>
+	
+	<select id="chartData" resultType="map">
+		select department_name, count(*) cnt
+		from	hr.employees e
+		join	hr.departments d
+		on	e.department_id = d.department_id
+		group by department_name
+	</select>
+	
+</mapper>
