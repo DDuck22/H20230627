@@ -26,4 +26,23 @@
 		group by department_name
 	</select>
 	
+	<select id="select" resultType="member">
+		select * from tbl_users
+		where user_id = #{id}
+	</select>
+	
+	<update id="update" parameterType="member">
+		update	tbl_users
+		set 		user_pw = #{userPw},
+						user_phone = #{userPhone},
+						user_addr = #{userAddr}
+		where 	user_id = #{userId}
+	</update>
+	
+	<update id="updateImage" parameterType="member">
+		update	tbl_users
+		set 		user_img = #{userImg}
+		where 	user_id = #{userId}
+	</update>
+	
 </mapper>

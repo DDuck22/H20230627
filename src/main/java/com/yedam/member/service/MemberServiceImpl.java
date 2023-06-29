@@ -9,11 +9,11 @@ import com.yedam.common.DataSource;
 import com.yedam.member.dao.MemberMapper;
 import com.yedam.member.vo.MemberVO;
 
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
 
 	SqlSession session = DataSource.getInstance().openSession(true);
 	MemberMapper mapper = session.getMapper(MemberMapper.class);
-	
+
 	@Override
 	public List<MemberVO> members() {
 		return mapper.memberList();
@@ -29,5 +29,20 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return mapper.chartData();
 	}
-	
+
+	@Override
+	public MemberVO getMember(String id) {
+		return mapper.select(id);
+	}
+
+	@Override
+	public boolean modifyMember(MemberVO vo) {
+		return mapper.update(vo) == 1;
+	}
+
+	@Override
+	public boolean modifyImage(MemberVO vo) {
+		return mapper.updateImage(vo) == 1;
+	}
+
 }

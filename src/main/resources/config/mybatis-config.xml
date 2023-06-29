@@ -8,6 +8,8 @@
 	</settings>
 	<typeAliases>
 		<typeAlias alias="member" type="com.yedam.member.vo.MemberVO" />
+		<typeAlias alias="calendar" type="com.yedam.calendar.vo.CalendarVO" />
+		<typeAlias alias="board" type="com.yedam.board.vo.BoardVO" />
 	</typeAliases>
 
 	<environments default="development">
@@ -24,5 +26,7 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/yedam/member/dao/MemberMapper.xml" />
+		<mapper resource="com/yedam/calendar/dao/CalendarMapper.xml" />
+		<mapper resource="com/yedam/board/dao/BoardMapper.xml" />
 	</mappers>
 </configuration>
