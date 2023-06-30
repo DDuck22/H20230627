@@ -4,7 +4,7 @@
 <h2> Main page </h2>
 <table border="1" class="table">
 	<tr>
-		<th>이름</th> 
+		<th>이름</th>
 		<td><input type="text" id="name"></td>
 	</tr>
 	<tr>
@@ -17,7 +17,7 @@
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-		<button id="saveBtn" class="btn btn-primary">저장</button></td>
+			<button id="saveBtn" class="btn btn-primary">저장</button></td>
 	</tr>
 </table>
 <table id="list" border="1" class="table">
@@ -29,19 +29,20 @@
 			<th>삭제</th>
 		</tr>
 	</thead>
-	<tbody id="target" >
+	<tbody id="target">
 	</tbody>
 </table>
 <style>
-	div.outer{
+	div.outer {
 		display: inline-block;
 		width: 700px;
 		height: 500px;
 		background-color: yellow;
 	}
-	.outer span{
+
+	.outer span {
 		display: inline-block;
-		width: 80px;
+		width: 110px;
 		height: 30px;
 		margin: 2px;
 		padding: 2px;
@@ -51,10 +52,12 @@
 </style>
 <input type="text" id="userInput"><br>
 <br>
+<p id="time"></p>
+<br>
 <div class="outer">
-	<span>hello</span>
-	<span>loooo</span>
+
 </div>
 
 
-<script src="resources/js/main5.js"></script>
+
+<script src="resources/js/main6.js"></script>

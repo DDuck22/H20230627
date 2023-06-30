@@ -10,8 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yedam.board.control.AddReplyControl;
+import com.yedam.board.control.BoardControl;
 import com.yedam.board.control.BoardList;
-import com.yedam.board.control.getBoardList;
+import com.yedam.board.control.DelReplyControl;
+import com.yedam.board.control.EditReplyControl;
+import com.yedam.board.control.ReplyControl;
+import com.yedam.board.control.ReplyListControl;
 import com.yedam.calendar.control.AddEventControl;
 import com.yedam.calendar.control.EventForm;
 import com.yedam.calendar.control.EventListControl;
@@ -44,19 +49,24 @@ public class FrontController extends HttpServlet {
 		menu.put("/memberInfo.do", new MemberInfoControl());
 		menu.put("/memberModify.do", new MemberModifyControl());
 		menu.put("/imageUpload.do", new ImageUploadControl());
-		
 
 		menu.put("/chartForm.do", new ChartFormControl());
 		menu.put("/chartData.do", new ChartDataControl());
 		menu.put("/calendar.do", new CalendarForm());
-		
+
 		menu.put("/eventForm.do", new EventForm());
 		menu.put("/eventList.do", new EventListControl());
 		menu.put("/addEvent.do", new AddEventControl());
 		menu.put("/removeEvent.do", new RemoveEventControl());
-		
+
 		menu.put("/boardList.do", new BoardList());
-		menu.put("/getBoardList.do", new getBoardList());
+		menu.put("/board.do", new BoardControl());
+
+		menu.put("/replyList.do", new ReplyListControl());
+		menu.put("/getReply.do", new ReplyControl());
+		menu.put("/addReply.do", new AddReplyControl());
+		menu.put("/editReply.do", new EditReplyControl());
+		menu.put("/delReply.do", new DelReplyControl());
 	}
 
 	@Override

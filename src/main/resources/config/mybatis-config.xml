@@ -7,9 +7,12 @@
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
 	<typeAliases>
-		<typeAlias alias="member" type="com.yedam.member.vo.MemberVO" />
-		<typeAlias alias="calendar" type="com.yedam.calendar.vo.CalendarVO" />
-		<typeAlias alias="board" type="com.yedam.board.vo.BoardVO" />
+		<typeAlias alias="member"
+			type="com.yedam.member.vo.MemberVO" />
+		<typeAlias alias="calendar"
+			type="com.yedam.calendar.vo.CalendarVO" />
+		<typeAlias alias="board" type="com.yedam.board.vo.Board" />
+		<typeAlias alias="reply" type="com.yedam.board.vo.ReplyVO" />
 	</typeAliases>
 
 	<environments default="development">
@@ -28,5 +31,6 @@
 		<mapper resource="com/yedam/member/dao/MemberMapper.xml" />
 		<mapper resource="com/yedam/calendar/dao/CalendarMapper.xml" />
 		<mapper resource="com/yedam/board/dao/BoardMapper.xml" />
+		<mapper resource="com/yedam/board/dao/ReplyMapper.xml" />
 	</mappers>
 </configuration>

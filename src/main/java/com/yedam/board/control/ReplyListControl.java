@@ -7,23 +7,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.yedam.board.service.BoardService;
-import com.yedam.board.service.BoardServiceImpl;
-import com.yedam.board.vo.BoardVO;
+import com.yedam.board.service.ReplyService;
+import com.yedam.board.service.ReplyServiceImpl;
+import com.yedam.board.vo.ReplyVO;
 import com.yedam.common.Control;
 
-public class getBoardList implements Control {
+public class ReplyListControl implements Control {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) {
-		BoardService service = new BoardServiceImpl();
+		String brdNo = req.getParameter("brdNo");
 		
-		String page = req.getParameter("page");
-		page = page == null ? "1" : page;
-		
-		List<BoardVO> list = service.boardList(Integer.parseInt(page));
+		ReplyService service = new ReplyServiceImpl();
+		List<ReplyVO> list = service.replyList(Long.parseLong(brdNo));
 		
 		Gson gson = new GsonBuilder().create();
+		
 		
 		return gson.toJson(list)+".json";
 	}
